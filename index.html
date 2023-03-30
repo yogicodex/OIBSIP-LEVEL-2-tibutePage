@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tribute Page</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+        :root {
+            --font-family: "Roboto" sans-serif;
+
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 62.5%;
+        }
+
+        body {
+            font-family: "Roboto", sans-serif;
+            background-color: #212529;
+            height: 100vh;
+        }
+
+
+
+
+        .tribute-page {
+            display: flex;
+            height: inherit;
+        }
+
+        .section-timeline .spacial-h2 {
+            font-size: 2.8rem;
+            text-align: center;
+        }
+
+        .tribute-img {
+            display: flex;
+            /* text-align: center; */
+            align-items: center;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .tribute-img label {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #141414;
+
+        }
+
+        img {
+            width: 350px;
+            height: 350px;
+            border-radius: 400px;
+            box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .about-tribute {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+            background-color: #f1f3f5;
+            padding-left: 3rem;
+            margin: 18rem 2rem;
+            /* align-items: center; */
+        }
+
+        .tribute-discription p {
+            font-size: 1.6rem;
+            line-height: 1.6;
+            padding-right: 10rem;
+            margin-bottom: 3rem;
+
+        }
+
+        .tribute-discription a {
+            background-color: #1c7ed6;
+            padding: 15px 39px;
+            border: 2px solid #1c7ed6;
+            text-decoration: none;
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: #fff;
+            border-radius: 4px;
+        }
+
+        /* .tribute-discription a:link, */
+        .tribute-discription a:hover {
+            background-color: #4598e1;
+        }
+
+        h1 {
+            font-size: 3.6rem;
+            margin-bottom: 2rem;
+        }
+
+        .section-timeline {
+            /* padding: 5rem 3rem; */
+            width: 1600px;
+            overflow-y: scroll;
+            scroll-behavior: auto;
+            scroll-snap-type: proximity;
+            /* background-color: rebeccapurple; */
+            position: relative;
+            padding-top: 5rem;
+            padding: 2rem;
+
+        }
+
+
+
+        .timeline-content::before {
+            height: 145%;
+            width: 10px;
+            content: " ";
+            position: absolute;
+
+            background-color: aqua;
+
+
+        }
+
+
+        .section-timeline .spacial-h2 {
+            font-size: 3rem;
+            letter-spacing: 2px;
+            text-align: center;
+            color: #fff;
+            margin-bottom: 3rem;
+        }
+
+        .timeline-content {
+            display: flex;
+            flex-direction: column;
+            gap: 5rem;
+            padding-bottom: 3rem;
+            margin-left: 5rem;
+        }
+
+        .timeline-content::before {
+            height: 152%;
+            width: 10px;
+            content: " ";
+            position: absolute;
+            top: 0;
+            left: 18px;
+
+            background-color: #1c7ed6;
+            margin-top: 10rem;
+
+
+        }
+
+        .timeline-for {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+            /* margin-bottom: 5rem; */
+        }
+
+        .timeline-for::before {
+            content: "";
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #1c7ed6;
+            position: absolute;
+            /* top: 0; */
+            left: 12px;
+            box-shadow: 0 0 0px 8px rgba(200, 200, 200, 0.5);
+
+        }
+
+        .timeline-for h2 {
+            font-size: 2rem;
+            color: #fff;
+        }
+
+        .timeline-for p {
+            font-size: 1.4rem;
+            line-height: 1.5;
+            color: #a4a3a3;
+            /* width: 18rem; */
+
+        }
+
+        .top {}
+
+
+        .footer {
+            /* background-color: transparent; */
+            width: 500px;
+            height: 8rem;
+            font-size: 1.6rem;
+            text-align: center;
+            color: #a5a3a3;
+            padding-top: 2rem;
+            overflow: hidden;
+            /* margin-left: 4000px; */
+            margin: 0 auto;
+            /* display: none; */
+        }
+
+        @media screen and (max-width: 1050px) {
+            .tribute-page {
+                flex-direction: column;
+                gap: 0;
+
+            }
+
+            .section-timeline {
+                width: inherit;
+                overflow: visible;
+            }
+
+            .timeline-content::before {
+                height: 85%;
+            }
+
+            .about-tribute {
+                margin: 0;
+                flex-direction: column;
+                padding: 4rem
+            }
+
+            label {
+                display: none;
+            }
+
+
+
+            .tribute-discription {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-left: 3rem;
+            }
+
+            .footer {
+                display: block;
+                margin-top: 90%;
+            }
+        }
+
+        @media screen and (max-width: 1000px) {
+            .footer {
+                margin-top: 90%;
+            }
+        }
+
+        @media screen and (max-width: 800px) {
+            .footer {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div class="top"> -->
+    <div class="tribute-page">
+        <div class="section-timeline">
+            <h2 class="spacial-h2">Timeline</h2>
+            <div class="timeline">
+                <div class="timeline-bar"></div>
+                <div class="timeline-content">
+                    <div class="timeline-for">
+                        <h2>1931</h2>
+                        <p>Avul Pakir Jainulabdeen Abdul Kalam was born to Jainulabdeen, a boat owner, and homemaker
+                            Ashiamma.</p>
+                    </div>
+                    <div class="timeline-for">
+                        <h2>1954</h2>
+                        <p>Kalam graduates in physics from Saint Joseph's College, Tiruchirappalli.</p>
+                    </div>
+                    <div class="timeline-for">
+                        <h2>1960</h2>
+                        <p>Kalam completes his degree in Aeronautical Engineering from Madras Institute of
+                            Technology
+                        </p>
+                    </div>
+                    <div class="timeline-for">
+                        <h2>1969</h2>
+                        <p>Kalam moves to the Indian Space Research Organisation (ISRO) where he helms India </p>
+                    </div>
+                    <div class="timeline-for">
+                        <h2>1980</h2>
+                        <p>Kalam leads India’s efforts to enter the space club by putting the Rohini satellite </p>
+                    </div>
+                    <div class="timeline-for">
+                        <h2>1981</h2>
+                        <p>Kalam recieves the Padma Bhushan for his contribution to the field of science and
+                            technology
+                        </p>
+                    </div>
+                    <div class="timeline-for">
+                        <h2>1990</h2>
+                        <p>Kalam is awarded the Padma Vibhushan, India’s second highest civilian honour</p>
+                    </div>
+                    <div class="timeline-for">
+                        <h2>1992</h2>
+                        <p>Kalam is appointed as the Chief Scientific Adviser to the Prime Minister /p>
+                    </div>
+                    <div class="timeline-for">
+                        <h2>1997</h2>
+                        <p>Kalam is awarded the Bharat Ratna, India's highest civilian honour for his contribution
+                            research</p>
+                    </div>
+                    <div class="timeline-for">
+                        <h2>2002</h2>
+                        <p>Kalam is elected the 11th President of India succeeding KR Narayanan.</p>
+                    </div>
+                    <div class="timeline-for">
+                        <h2>2015</h2>
+                        <p>Kalam passes away aged 83, after collapsing because of a cardiac arrest while </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="about-tribute">
+            <div class="tribute-img">
+                <img src="https://img.jagranjosh.com/images/2021/July/2772021/apj_abdul-kalam_sixth_death_anniversary.webp"
+                    id="img">
+                <label for="img">APJ ABDULE KALAM</label>
+            </div>
+            <div class="tribute-discription">
+                <h1>DR. APJ ABDULE KALAM</h1>
+                <p>Born on 15th October 1931 at Rameswaram in Tamil Nadu, Dr. Avul Pakir Jainulabdeen Abdul Kalam,
+                    specialized in
+                    Aeronautical Engineering from Madras Institute of Technology. Dr. Kalam made significant
+                    contribution as Project
+                    Director to develop India's first indigenous Satellite Launch Vehicle (SLV-III) which
+                    successfully
+                    injected the Rohini
+                    satellite in the near earth orbit in July 1980 and made India an exclusive member of Space Club.
+                    Dr.
+                    Kalam took up the responsibility of developing
+                    Indigenous Guided
+                    Missiles
+                    Development Programme (IGMDP).</p>
+                <a href="https://en.wikipedia.org/wiki/A._P._J._Abdul_Kalam">READ MORE</a>
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+
+    <div class="footer">
+        <p>A Tribute is india's former president and missile man Dr APJ Abdule Kalam❤️</p>
+    </div>
+
+    <!-- </div> -->
+
+</body>
+
+</html>
